@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>munjima's.com</title>
+<link rel="stylesheet" href="style.css"> 
+
+  <style>
+    /* Add your CSS styles here */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header { 
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #E1D9D1;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .nav {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav li {
+      margin-left: 20px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .cart {
+      position: relative;
+    }
+
+    .cart span {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color:darkred;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      width: 25%;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product h3 {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: normal;
+      color: #000000;
+    }
+
+    .product p {
+      margin-top: 5px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .product .rating {
+      display: flex;
+      margin-top: 5px;
+    }
+
+    .product .rating span {
+      margin-right: 5px;
+      font-size: 14px;
+      color: #f00;
+    }
+
+    .product .rating span:last-child {
+      margin-right: 0;
+      color: #333;
+    }
+
+    .product .add-to-cart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      width: 100%;
+      height: 40px;
+      border: none;
+      background-color: #FF511D;
+      color: #000000;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<label for="search">Search:</label>
+
+<body style="background-color: rgb(197, 220, 239);">
+  <div class="container">
+    <div class="header">
+      <div class="logo">MUNJIM'S<br/>
+
+      <p style="font-family: Cursive; font-size: 7px">in search of purity</p>
+
+         </div>
+      <ul class="nav">
+        <li><a href="http://facebook.com">Home</a></li>
+        <li><a href="http://instagram.com">Products</a></li>
+        <li><a href="about .html" target="_blank">About</a></li>
+        <li><a href="contract.html">Contact</a></li>
+      </ul>
+      <label for="search">Search:</label>
+<input type="search" id="search" name="search">
+
+      <div class="cart"> <abbr title="Khejur borfi">
+        <img src="img/oo.jpg" width="50px" height="40px" alt="Cart">
+        <span id="cart-count">0</span>
+      </abbr></div>
+    </div>
+    <div class="main">
+      <!-- Add your product cards here -->
+     
+      <div class="product" data-id="1">
+        <img src="img/borfi.jpg" alt="khejur Borfi">
+        <h3>khejur borfi</h3>
+        <p>10 taka</p>
+        <div class="rating">
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>(5)</span>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      
+      <div class="product" data-id="2">
+        <img src="img/pitha.jpg" alt="Nokshi Pitha">
+        <h3>Nokshi Pitha</h3>
+        <p>5 taka</p>
+        <div class="rating">
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>(4)</span>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-id="3">
+        <img src="img/tshirt.jpg" alt="T-Shirt">
+        <h3>T-Shirt</h3>
+        <p>500 Taka</p>
+        <div class="rating">
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>(3)</span>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-id="4">
+        <img src="img/cake1.jpg" alt="Cake">
+        <h3>Cake</h3>
+        <p>70 Taka</p>
+        <div class="rating">
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>(5)</span>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Add your JavaScript code here
+    // Get the cart count element
+    const cartCount = document.getElementById("cart-count");
+
+    // Get all the add to cart buttons
+    const addToCartButtons = document.querySelectorAll("v");
+
+    // Loop through the buttons and add click event listeners
+    for (let button of addToCartButtons) {
+      button.addEventListener("click", function() {
+        // Get the product id from the data-id attribute
+        const productId = this.parentElement.dataset.id;
+
+        // Check if the product is already in the cart
+        if (localStorage.getItem(productId)) {
+          // If yes, increment the quantity by 1
+          localStorage.setItem(productId, parseInt(localStorage.getItem(productId)) + 1);
+        } else {
+          // If no, set the quantity to 1
+          localStorage.setItem(productId, 1);
+        }
+
+        // Update the cart count
+        updateCartCount();
+      });
+    }
+
+    // Define a function to update the cart count
+    function updateCartCount() {
+      // Get all the keys from the local storage
+      const keys = Object.keys(localStorage);
+
+      // Initialize the total count to 0
+      let totalCount = 0;
+
+      // Loop through the keys and add the values to the total count
+      for (let key of keys) {
+        totalCount += parseInt(localStorage.getItem(key));
+      }
+
+      // Set the cart count text to the total count
+      cartCount.textContent = totalCount;
+    }
+
+    // Call the update cart count function on page load
+    updateCartCount();
+  </script>
+  <p>hello this is a official page of Munjima's</p>
+  <br/>
+  <br/>
+
+
+  <div class="letter-image">
+  <div class="animated-mail">
+    <div class="back-fold"></div>
+    <div class="letter">
+      <div class=""></div>
+      <div class="">welcome To Munjima's</div>
+      <div class=""></div>
+      <div class="">
+        <div class="letter-stamp-inner"></div>
+      </div>
+    </div>
+    <div class="top-fold"></div>
+    <div class="body"></div>
+    <div class="left-fold"></div>
+  </div>
+  <div class="shadow"></div>
+</div>
+
+<details onscroll="Brand">
+<footer>
+        <div class="info">
+            <table>
+                <tr>
+                    <th>Address</th>
+                    <td>123 Main Street, Barisal, Bangladesh</td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td>+880 1234 5678</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>munjima@example.com</td>
+                </tr>
+            </table>
+        </div>
+        <div class="social">
+        </div>
+
+      </footer>
+    </details>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+ <p>© 2024 Clothing Brand</p>
+
+</body>
+</html>
